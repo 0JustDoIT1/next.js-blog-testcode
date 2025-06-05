@@ -1,15 +1,12 @@
 @import "tailwindcss";
 
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +17,142 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-textHover: #f9fafb;
+  --color-textBlur: #f3f4f6;
+  --color-textSuperLight: #e5e7eb;
+  --color-textLight: #d1d5dc;
+  --color-textIcon: #99a1af;
+  --color-textNormal: #6a7282;
+  --color-textMain: #1e2939;
+  --color-brandSuperLight: #b9f8cf;
+  --color-brandLight: #7bf1a8;
+  --color-brandMain: #00c951;
+  --color-brandMainHover: #00a63e;
+  --color-brandDark: #008236;
+  --color-success: #22bb33;
+  --color-error: #ff2424;
+  --color-info: #5bc0de;
+
+  --animate-fadeIn: fadeIn 0.5s ease-in-out;
+  --animate-fadeOut: fadeOut 0.5s ease-in-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 1.25;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Basic editor styles */
+.ProseMirror {
+  min-height: 360px;
+  outline: none;
+  padding: 10px;
+}
+
+.ProseMirror-focused {
+  border: none !important;
+  outline: none !important;
+}
+
+#tiptap-box:focus-within {
+  outline: 2px solid #00c951 !important;
+}
+
+.tiptap {
+  :first-child {
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 0.875rem;
+    color: #364153;
+  }
+
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+    margin-top: 2.5rem;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    margin: 1.5rem 0;
+    max-width: 100%;
+
+    &.ProseMirror-selectednode {
+      outline: 3px solid var(--purple);
+    }
+  }
+
+  /* Placeholder (at the top) */
+  p.is-editor-empty:first-child::before {
+    color: gray;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
 }

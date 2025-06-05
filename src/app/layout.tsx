@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import { AsPathProvider } from "@/context/asPathContext";
+import { ToastProvider } from "@/context/toastContext";
+import { ThemeStoreProvider } from "@/lib/providers/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const gmarket = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/GmarketSansLight.otf",
+      weight: "300",
+      style: "light",
+    },
+    {
+      path: "../../public/assets/fonts/GmarketSansMedium.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/GmarketSansBold.otf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -19,15 +32,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={gmarket.className}>
+        <ThemeStoreProvider>
+          <AsPathProvider>
+            <ToastProvider>
+              {children}
+              {modal}
+              <div id="portal" />
+            </ToastProvider>
+          </AsPathProvider>
+        </ThemeStoreProvider>
       </body>
     </html>
   );
