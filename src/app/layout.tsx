@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { AsPathProvider } from "@/context/asPathContext";
 import { ToastProvider } from "@/context/toastContext";
-import { ThemeStoreProvider } from "@/lib/providers/theme-provider";
+import { ThemeProviders } from "@/lib/providers/theme-provider";
+// import { ThemeStoreProvider } from "@/lib/providers/theme-provider";
 
 const gmarket = localFont({
   src: [
@@ -38,9 +39,10 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={gmarket.className}>
-        <ThemeStoreProvider>
+        {/* <ThemeStoreProvider> */}
+        <ThemeProviders>
           <AsPathProvider>
             <ToastProvider>
               {children}
@@ -48,7 +50,8 @@ export default function RootLayout({
               <div id="portal" />
             </ToastProvider>
           </AsPathProvider>
-        </ThemeStoreProvider>
+        </ThemeProviders>
+        {/* </ThemeStoreProvider> */}
       </body>
     </html>
   );

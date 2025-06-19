@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import AngleLeftIcon from "~/public/assets/svg/angle-left";
-import AngleLeftSvg from "~/public/assets/svg/angle-left.svg";
+import AngleLeftIcon from "assets/svg/angle-left";
+import AngleLeftSvg from "assets/svg/angle-left.svg";
 
 const SvgPage = () => {
   return (
