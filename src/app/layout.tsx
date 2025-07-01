@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { AsPathProvider } from "@/context/asPathContext";
-import { ToastProvider } from "@/context/toastContext";
-import { ThemeProviders } from "@/lib/providers/theme-provider";
-// import { ThemeStoreProvider } from "@/lib/providers/theme-provider";
+import RootProvider from "@/lib/providers";
 
 const gmarket = localFont({
   src: [
@@ -41,17 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={gmarket.className}>
-        {/* <ThemeStoreProvider> */}
-        <ThemeProviders>
-          <AsPathProvider>
-            <ToastProvider>
-              {children}
-              {modal}
-              <div id="portal" />
-            </ToastProvider>
-          </AsPathProvider>
-        </ThemeProviders>
-        {/* </ThemeStoreProvider> */}
+        <RootProvider>
+          {children}
+          {modal}
+          <div id="portal" />
+        </RootProvider>
       </body>
     </html>
   );
