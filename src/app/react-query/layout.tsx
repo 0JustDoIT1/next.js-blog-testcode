@@ -4,7 +4,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { PropsWithChildren } from "react";
-import { TestFetchApi } from "../api/test";
+import { TestFetchApi } from "../api/test-api";
 
 export default async function ReactQueryLayout({
   children,

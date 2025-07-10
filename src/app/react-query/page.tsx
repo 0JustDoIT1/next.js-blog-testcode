@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { TestFetchApi } from "../api/test";
+import { TestFetchApi } from "../api/test-api";
 
 const ReactQueryPage = () => {
   const { data, isSuccess, isLoading, isError } = useQuery({

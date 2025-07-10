@@ -1,3 +1,5 @@
+import { getFetch } from "@/lib/fetch/get-fetch";
+
 export const TestFetchApi = async () => {
   return await fetch("https://jsonplaceholder.typicode.com/todos/1").then(
     (res) => {
@@ -20,4 +22,10 @@ export const TestFetchApi2 = async (id: string) => {
       return res.json();
     }
   );
+};
+
+const isServer = () => typeof window === "undefined";
+
+export const FetchModuleApi = async (id: string) => {
+  return await getFetch(isServer(), `/todos/${id}`);
 };

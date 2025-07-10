@@ -1,4 +1,4 @@
-import { TestFetchApi2 } from "@/app/api/test";
+import { TestFetchApi2 } from "@/app/api/test-api";
 import {
   dehydrate,
   HydrationBoundary,
