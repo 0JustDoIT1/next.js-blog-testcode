@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Next.js 블로그 정리 예제 모음
 
-## Getting Started
+Next.js 관련 블로그를 정리하면서 사용된 **간단한 예제 코드들**을 모아둔 저장소입니다.  
+실전보다는 설명과 학습 목적에 맞춘 간단하고 핵심만 담은 예제 중심입니다.
 
-First, run the development server:
+## 📚 목적
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 블로그 포스팅에 사용되는 Next.js 코드 정리
+- 새로운 기능 실험 및 예제 생성
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✅ 참고
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> 📌 **모든 예제는 블로그 글과 함께 보면 훨씬 쉽게 이해할 수 있습니다!**  
+> 👉 [https://hbc3869.tistory.com](https://hbc3869.tistory.com)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+감사합니다 🙏
