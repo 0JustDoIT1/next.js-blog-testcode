@@ -4,10 +4,22 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
+import { Metadata } from "next";
 
 interface IProductLayout {
   children: React.ReactNode;
   params: { id: string };
+}
+
+export async function generateMetadata({
+  params,
+}: IProductLayout): Promise<Metadata> {
+  const { id } = await params;
+
+  return {
+    title: id,
+    description: `${id} 입니다.`,
+  };
 }
 
 export default async function ProductLayout({
